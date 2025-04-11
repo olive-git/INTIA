@@ -1,0 +1,25 @@
+﻿@page
+@model INTIA.Pages.Customer.CustomerDetailModel
+@{
+	ViewData["Title"] = "Customers Details";
+}
+
+<div class="w-full h-full">
+	<div class="w-2/3 flex flex-col items-center">
+		@if (Model.Customer != null)
+		{
+			<div class="input-box flex flex-column gap-2">
+				<label for="firstname">First Name</label>
+				<input id="firstname" name="firstname" value="@Model.Customer.Firstname" />
+			</div>
+			<div class="input-box flex flex-column gap-2">
+				<label for="lastname">Last Name</label>
+				<input id="lastname" name="lastname" value="@Model.Customer.Lastname" />
+			</div>
+		}
+		else
+		{
+			<p>Customer Not found</p>
+		}
+	</div>
+</div>

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - INTIA</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/INTIA.styles.css" asp-append-version="true" />
+
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!--Tailwind css cdn-->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-screen">
+    <header>
+        <nav class="w-full">
+            <div class="ps-10 pt-3 pe-2 pb-3 border border-bottom-1 border-gray shadow-md flex gap-10 justify-start">
+                <a class="" asp-area="" asp-page="/Index">INTIA INSURANCE</a>
+                <div class="">
+                    <ul class="flex gap-10">
+                        <li class="">
+                            <a class="text-black" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="">
+                            <a class="text-black" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="w-full h-full">
+        <main role="main" class="w-full">
+
+            <div class="flex flex-row h-full">
+                <div class="w-1/4 sidebar bg-cyan-700 border border-right-0 border-gray shadow-md">
+                    <ul>
+                        <li class="side-menu-link">
+                            <a class="hover:bg-cyan-800" asp-page="/Customer/CustomersList">Customers</a>
+                        </li>
+                        <li class="side-menu-link hover:bg-cyan-800">
+                            <a class="hover:bg-cyan-800" asp-page="/Insurance/Index">Insurances</a>
+                        </li>
+                    </ul>
+                </div>
+                    <div class="content">
+                        @RenderBody()
+                    </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - INTIA - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
